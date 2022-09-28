@@ -1,6 +1,6 @@
 # LMS
 
-#Task
+# Task
 The task is to implement a learning management system (LMS) using REST APIs. The system
 should consist of a database, REST API, a single page application and a mobile application.
 Minimum set of features to implement:
@@ -18,7 +18,7 @@ and students should be able to receive such announcements as Emails.
 Other than above mentioned features, you are encouraged to define and implement any other
 functionalities as time permits.
 
-#Technologies to use:
+# Technologies to use:
 ● Use Java Spring framework to develop the backend REST API.
 ● Use any database technology as you wish. (Try to use JPA to access database)
 ● Use any framework to develop the single page application as you wish. Ex: React, Vue,
