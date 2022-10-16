@@ -60,7 +60,7 @@
   font-weight: 500;
   color: #1eb2a6;
 }
-/*-------------online---------*/
+
 .online {
   text-align: center;
 }
@@ -112,6 +112,6 @@
 .online .box:hover h1 {
   color: #fff;
 }
-/*-------------online---------*/
+
 @media screen and (max-width: 768px) {
 }

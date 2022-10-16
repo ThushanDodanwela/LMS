@@ -10,14 +10,14 @@ const HAbout = () => {
       <section className="homeAbout">
         <div className="container">
           <Heading
-            subtitle="our courses"
+            subtitle="All courses"
             title="explore our popular online courses"
           />
 
           <div className="coursesCard">
             {/* copy code form  coursesCard */}
             <div className="grid2">
-              {coursesCard.slice(0, 3).map((val) => (
+              {coursesCard.slice(0, 6).map((val) => (
                 <div className="items">
                   <div className="content flex">
                     <div className="left">
