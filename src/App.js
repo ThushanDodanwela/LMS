@@ -1,5 +1,5 @@
 import "./App.css";
-
+import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import About from "./components/about/About";
 import CourseHome from "./components/allcourses/CourseHome";
@@ -7,6 +7,12 @@ import CourseHome from "./components/allcourses/CourseHome";
 import Home from "./components/home/Home";
 import Login from "../src/components/Login/Login";
 function App() {
+  const [token, setToken] = useState();
+
+  // if(!token) {
+  //   return <Login setToken={setToken} />
+  // }
+
   return (
     <>
       <Router>

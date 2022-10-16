@@ -1,76 +1,54 @@
-import React, { useState } from "react";
-import useForm from "./useForm";
-import validate from "./LoginFormValidationRules.jsx";
-import { Redirect } from "react-router-dom";
-import "../Login/Login.css";
-import "bulma/css/bulma.css";
+import React, { Component } from "react";
 
-const Form = (props) => {
-  const { values, errors, handleChange, handleSubmit } = useForm(
-    login,
-    validate
-  );
-  const [loggedIn, setLoggedIn] = useState(false);
+import "./Login.css";
 
-  function login() {
-    setLoggedIn(true);
-    props.parentCallback(true);
-    return <Redirect to="/default" />;
-  }
+class Login extends Component {
+  handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(e.target.email.value);
 
-  return (
-    <div className="section is-fullheight">
-      {loggedIn && <Redirect to="/default" />}
-      <div className="container">
-        <div className="column is-6 is-offset-3">
-          <div className="box">
-            <h1>Login</h1>
-            <form onSubmit={handleSubmit} noValidate>
-              <div className="field">
-                <label className="label">Email Address</label>
-                <div className="control">
-                  <input
-                    autoComplete="off"
-                    className={`input ${errors.email && "is-danger"}`}
-                    type="email"
-                    name="email"
-                    onChange={handleChange}
-                    value={values.email || ""}
-                    required
-                  />
-                  {errors.email && (
-                    <p className="help is-danger">{errors.email}</p>
-                  )}
-                </div>
-              </div>
-              <div className="field">
-                <label className="label">Password</label>
-                <div className="control">
-                  <input
-                    className={`input ${errors.password && "is-danger"}`}
-                    type="password"
-                    name="password"
-                    onChange={handleChange}
-                    value={values.password || ""}
-                    required
-                  />
-                </div>
-                {errors.password && (
-                  <p className="help is-danger">{errors.password}</p>
-                )}
-              </div>
-              <button
-                type="submit"
-                className="button is-block is-info is-fullwidth"
-              >
-                Login
-              </button>
-            </form>
+    if (!e.target.email.value) {
+      alert("Email is required");
+    } else if (!e.target.email.value) {
+      alert("Valid email is required");
+    } else if (!e.target.password.value) {
+      alert("Password is required");
+    } else if (
+      e.target.email.value === "me@example.com" &&
+      e.target.password.value === "123456"
+    ) {
+      alert("Successfully logged in");
+      e.target.email.value = "";
+      e.target.password.value = "";
+    } else {
+      alert("Wrong email or password combination");
+    }
+  };
+
+  handleClick = (e) => {
+    e.preventDefault();
+
+    alert("Goes to registration page");
+  };
+
+  render() {
+    return (
+      <div className="Login">
+        <h1> LMS - ACADEMIA</h1>
+        <form className="form" onSubmit={this.handleSubmit}>
+          <div className="input-group">
+            <label htmlFor="email">Email</label>
+            <input type="email" name="email" placeholder="nome@email.com.br" />
           </div>
-        </div>
+          <div className="input-group">
+            <label htmlFor="password">Password</label>
+            <input type="password" name="password" />
+          </div>
+          <button className="primary">Login</button>
+        </form>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
-export default Form;
+export default Login;
