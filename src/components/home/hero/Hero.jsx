@@ -1,10 +1,12 @@
 import React from "react";
 import Heading from "../../common/heading/Heading";
 import "./Hero.css";
+import Header from "../../common/header/Header";
 
 const Hero = () => {
   return (
     <>
+      <Header />
       <section className="hero">
         <div className="container">
           <div className="row">

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Head from "./Head";
+
 import "./header.css";
 
 const Header = () => {
@@ -8,7 +8,6 @@ const Header = () => {
 
   return (
     <>
-      <Head />
       <header>
         <nav className="flexSB">
           <ul
