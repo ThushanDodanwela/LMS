@@ -23,10 +23,6 @@ const Header = () => {
             </li>
 
             <li>
-              <Link to="/dashboard">Dashboard</Link>
-            </li>
-
-            <li>
               <Link to="/contact">Contact</Link>
             </li>
           </ul>

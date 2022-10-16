@@ -1,3 +1,4 @@
+import { Button } from "@mui/material";
 import React from "react";
 
 const Head = () => {
@@ -11,9 +12,9 @@ const Head = () => {
           </div>
 
           <div className="social">
-            <i className="fab fa-facebook-f icon"></i>
-            <i className="fab fa-instagram icon"></i>
-            <i className="fab fa-youtube icon"></i>
+            <Button variant="outlined" color="success">
+              Login
+            </Button>
           </div>
         </div>
       </section>
